@@ -1,0 +1,96 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+    background-color: #f3f3f3;
+}
+/* Calorie Form */
+.calForm {
+	background-color: white;
+	padding: 10px;
+	margin: auto;
+	clear: both;
+	width: 60%;
+	border: 1px solid #b9b8b8;
+	box-shadow: 2px 2px 4px 1px #bababa;
+}
+
+fieldset {
+	background-color: #f5f5f5;
+	border: 1px solid #b9b8b8;
+	margin-bottom: 8px;
+}
+
+input {
+	margin: 8px;
+}
+
+input[type='radio'] {
+	margin-left: 140px;
+}
+
+label {
+	width: 130px;
+	display: inline-block;
+	text-align: right;
+}
+
+#button {
+	background-color: #ffffff;
+	border: 1px solid #000000;
+	border-radius: 5px;
+	box-shadow: 2px 2px 4px 1px #9b9b9b;
+}
+
+.red {
+	color: red;
+	font-size: 80%;
+}
+
+/* Jquery form incorrect field message */
+label.error {
+	font-size: small;
+	color: red;
+	width: auto;
+}
+
+/* Show and hide content */
+.collapse {
+	display: none;
+}
+
+.expand {
+	display: block;
+}
+
+/* Results content  */
+.resultBox {
+	font-weight: 500r;
+}
+
+#results > h1,
+h2 {
+	text-align: center;
+}
+
+#results > p {
+	max-width: 50%;
+	margin: 0px 20px 0px 20px;
+}
+
+.middle {
+	float: right;
+	vertical-align: middle;
+	clear: both;
+	padding: 0px 30px 0px 30px;
+}
+
+.maxWidth {
+	max-width: 100%;
+}
+
+Div.maxWidth > label {
+	width: 100%;
+	display: inline;
+	margin: 0px 0px 0px 20px;
+}

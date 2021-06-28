@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Calorie Calculator</title>
+		<link rel="stylesheet" href="calorie_calc.css" />
+
+		<script type="text/javascript" src="calorie_calc.js" defer></script>
+		<script
+			src="https://code.jquery.com/jquery-3.6.0.js"
+			integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+			crossorigin="anonymous"
+		></script>
+		<script type="text/javascript" src="Assets/jquery.validate.js" defer></script>
+	</head>
+
+	<body>
+		<noscript>enable js</noscript>
+
+		<!-- Harris Benidict Calorie Calculator-->
+		<div class="calForm">
+			<form name="calorieCalc" id="calorie_calculator" novalidate>
+				<fieldset>
+					<legend><strong>Personal Details</strong></legend>
+					<label for="firstname">First Name<span class="red"><sup>*</sup></span>:</label>
+					<input type="text" name="firstname" id="firstname" placeholder="Your first name" required minlength="2" autofocus/><br />
+					
+					<label for="lastname">Last Name<span class="red"><sup>*</sup></span>:</label>
+					<input type="text" id="lastname" placeholder="Your last name" required minlength="2"/><br />
+
+					<label for="email">Email Address<span class="red"><sup>*</sup></span>:</label>
+					<input type="email" id="email" placeholder="username@domain.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required minlength="2"/><br />
+				</fieldset>
+
+				<fieldset>
+					<legend><strong>Personal Stats</strong></legend>
+					<label for="age">Age<span class="red"><sup>*</sup></span>:</label>
+					<input name="age" type="number" id="age" placeholder="Your age" required/><br />
+
+					<label for="weight">Weight (kg)<span class="red"><sup>*</sup></span>:</label>
+					<input name="weight" type="number" id="weight" placeholder="Please enter in &#8220;kg&#8221;" required minlength="2"/><br />
+
+					<label for="height">Height (cm)<span class="red"><sup>*</sup></span>:</label>
+					<input name="height" type="number" id="height" placeholder="Please enter in &#8220;cm&#8221;" required minlength="2"/><br />
+
+					<label>Select your gender<span class="red"><sup>*</sup></span>:</label><br />
+					<input name="gender" type="radio" class="gender" value="Male" checked/>Male<br />
+					<input name="gender" type="radio" class="gender" value="Female"/>Female<br />
+
+					<label>Activity level<span class="red"><sup>*</sup></span></label>
+					<input name="actLvl" list="activity" id="actValue" required minlength="2"/>
+					<datalist id="activity">
+						<option value="Sedentary">Sedentary</option>
+						<option value="Light Activity">Light Activity</option>
+						<option value="Moderately Active">Moderately Active</option>
+						<option value="Active">Active</option>
+					</datalist> <br />
+
+					<label>Deficit Target<span class="red"><sup>*</sup></span></label>
+					<input name="Defic" list="deficit" id="deficitTarget" required minlength="2"/>
+					<datalist id="deficit">
+						<option value="2 lb">2 lb per week</option>
+						<option value="3 lb">3 lb per week</option>
+						<option value="4 lb">4 lb per week</option>
+					</datalist> <br />
+
+					<input type="checkbox" name="privacyPolicy" required/>
+					Please tick the box to agree to that you understand our
+					<ahref="https://www.pt500southampton.co.uk/policies"target="_blank">data protection policy
+					</a><span class="red">*</span>
+					<br />
+
+					<input type="checkbox"/>Plese tick the box if you would like us to send you other useful nutrition based information via email
+					<br/><br/>
+
+					<button type="button" id="submitBttn">Submit</button>
+				</fieldset>
+			</form>
+
+			<br />
+
+			<div id="results" class="collapse">
+				<h1>Your Results</h1>
+
+				<h2>Your BMR</h2>
+
+				<h4>Hey <span id="pname"></span>,</h4>
+
+				<div class="middle">
+					<label for="resultBmr">Your BMR is:</label>
+					<input id="resultBmr" type="text" readonly />
+					<span style="font-size: 70%">Kcals per day</span>.
+				</div>
+
+				<p>
+					Working out your BMR (Basel Metabolic Rate) is the first stage in calculating your calories. Your BMR is how many calories your body will naturely burn on a daily basis. The calculation we used to calculate this is <span id="bmrCalc" class="resultBox">####</span>.
+				</p>
+
+				<br/>
+				<hr width="80%" />
+				<br/>
+
+				<div class="middle">
+					<label for="resultTdee">Your TDEE is:</label>
+					<input id="resultTdee" type="text" readonly />
+					<span style="font-size: 70%">Kcals per day.</span>
+					<br/><br/>
+				</div>
+
+				<p>
+					Now that your BMR has been calculated the next stage is to figure out your Total Daily Energy Expenditure (TDEE), this takes into count your activity level. With an activity level of <span id="actlvl" class="resultBox">........</span> we have used the following calculation <span id="tdeeCalc" class="resultBox">........</span>
+				</p>
+
+				<br />
+				<hr width="80%" />
+				<br />
+
+				<p class="maxWidth">With your weight loss target of<span id="defTarget"></span>, Your calorie targets are:</p>
+				<br/><br/>
+
+				<div class="maxWidth">
+					<label for="weeklyTarget">Weekly Calorie Target: </label>
+					<input id="weeklyTarget" type="text" readonly />
+					<span style="font-size: 70%">Kcals per day.</span
+					><br/><br/>
+				</div>
+
+				<div class="maxWidth">
+					<label for="dailyTarget">Daily Calorie Target: </label>
+					<input id="dailyTarget" type="text" readonly />
+					<span style="font-size: 70%">Kcals per day.</span
+					><br/><br/>
+				</div>
+			</div>
+		</div>
+
+		<!-- <script>
+			$(document).ready(function () {
+				$('#calorie_calculator').validate();
+			});
+		</script> -->
+	</body>
+</html>
