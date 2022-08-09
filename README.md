@@ -1,10 +1,6 @@
-# Calorie-Calculator
+### Calorie-Calculator
 
-The main aim with this project was work with Javascript to take information entered into a form to make some calculations and replace the form with a results section. Finally use Jquery to add some form validation.
+This was my first ever project whilst I was studying `HTML`, `CSS`, `JavaScript` and `J-Query`.
 
-Task List:
+The aim wasn't to create something fancy looking, it's focus was using `JavaScript` and `J-Query` to take validate the user entered form data, do the calculations necessary and then manipulate the Dom to show the result.
 
-1, Create a basic HTML form and CSS Styles
-2, Use javascript to make the calculation depending on the information in the form
-3, Use javascript to manipulate the Dom to hide the form and Show the results
-4, use Jquery to add some form validation to the form
